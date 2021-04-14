@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D181E683-7946-42D6-8655-388978778F95}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FopFramework</RootNamespace>
+    <AssemblyName>FopFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DynamicExpresso.Core, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicExpresso.Core.2.4.0\lib\net461\DynamicExpresso.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic.Core, Version=1.2.9.0, Culture=neutral, PublicKeyToken=0f07ec44de6ac832, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.Core.1.2.9\lib\net46\System.Linq.Dynamic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\BooleanTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\CharDataTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\DateTimeDataTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\DecimalDataTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\DoubleDataTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\EnumDataTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\FilterOperatorNotFoundException.cs" />
+    <Compile Include="Exceptions\FloatDataTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\FopException.cs" />
+    <Compile Include="Exceptions\GuidDataTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\IntDataTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\LogicOperatorNotFoundException.cs" />
+    <Compile Include="Exceptions\LongDataTypeNotSupportedException.cs" />
+    <Compile Include="Exceptions\StringDataTypeNotSupportedException.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Filter\Filter.cs" />
+    <Compile Include="Filter\FilterEnumerations.cs" />
+    <Compile Include="Filter\FilterList.cs" />
+    <Compile Include="Filter\IFilter.cs" />
+    <Compile Include="Filter\IFilterList.cs" />
+    <Compile Include="Filter\IFilterRequest.cs" />
+    <Compile Include="FopExpression\FopExpressionBuilder.cs" />
+    <Compile Include="FopQuery.cs" />
+    <Compile Include="FopRequest.cs" />
+    <Compile Include="IFopQuery.cs" />
+    <Compile Include="IFopRequest.cs" />
+    <Compile Include="Order\IOrderRequest.cs" />
+    <Compile Include="Order\OrderDirection.cs" />
+    <Compile Include="Page\IPageRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategies\BooleanDataTypeStrategy.cs" />
+    <Compile Include="Strategies\CharDataTypeStrategy.cs" />
+    <Compile Include="Strategies\DateTimeDataTypeStrategy.cs" />
+    <Compile Include="Strategies\DecimalDataTypeStrategy.cs" />
+    <Compile Include="Strategies\DoubleDataTypeStrategy.cs" />
+    <Compile Include="Strategies\EnumDataTypeStrategy.cs" />
+    <Compile Include="Strategies\FloatDataTypeStrategy.cs" />
+    <Compile Include="Strategies\GuidTypeStrategy.cs" />
+    <Compile Include="Strategies\IFilterDataTypeStrategy.cs" />
+    <Compile Include="Strategies\IntDataTypeStrategy.cs" />
+    <Compile Include="Strategies\LongDataTypeStrategy.cs" />
+    <Compile Include="Strategies\StringDataTypeStrategy.cs" />
+    <Compile Include="Utils\Operator.cs" />
+    <Compile Include="Utils\StringExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
